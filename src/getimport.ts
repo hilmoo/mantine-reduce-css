@@ -50,6 +50,8 @@ export function extractMantineImports(props: extractMantineImportsType) {
   function processFile(filePath: string, allResults: Set<string>) {
     try {
       const content = readFileSync(filePath, "utf8");
+
+      // @mantine/core
       if (props.core) {
         const corePackage =
           /import\s*\{([\s\S]*?)\}\s*from\s*["']@mantine\/core["']/g;
@@ -65,6 +67,7 @@ export function extractMantineImports(props: extractMantineImportsType) {
         }
       }
 
+      // @mantine/dates
       if (props.dates) {
         const extDatePackage =
           /import\s*\{([\s\S]*?)\}\s*from\s*["']@mantine\/dates["']/g;
@@ -80,6 +83,7 @@ export function extractMantineImports(props: extractMantineImportsType) {
         }
       }
 
+      // @mantine/charts
       if (props.charts) {
         const extChartPackage =
           /import\s*\{([\s\S]*?)\}\s*from\s*["']@mantine\/charts["']/g;

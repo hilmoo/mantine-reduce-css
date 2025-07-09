@@ -7,37 +7,54 @@ import { generateCssFiles } from "./generate";
 const cli = cac("mantine-reduce-css");
 
 cli
-  .command("[dir]", "Directory to scan for Mantine imports")
-  .option("--out <file>", "Output file to save the results", {
+  .command("run", "Run Mantine CSS reduction")
+  .option("--in <dir>", "Directory to scan for Mantine imports", {
+    default: "./src",
+  })
+  .option("--out <file>", "Output file to save the result", {
     default: "mantine.css",
   })
-  .option("--base", "Include Mantine global imports", {
+  .option("--core", "Scan <dir> for @mantine/core packages", {
     default: true,
   })
-  .option("--core", "Include Mantine core imports", { default: true })
-  .option("--code_highlight", "Include Mantine code highlight imports", {
+  .option("--dates", "Scan <dir> for @mantine/dates packages", {
     default: false,
   })
-  .option("--notification", "Include Mantine notification imports", {
+  .option("--charts", "Scan <dir> for @mantine/charts packages", {
     default: false,
   })
-  .option("--spotlight", "Include Mantine spotlight imports", {
+  .option("--base", "Include Mantine global CSS in the output file", {
+    default: true,
+  })
+  .option(
+    "--code_highlight",
+    "Include @mantine/code-highlight CSS in the output file",
+    {
+      default: false,
+    }
+  )
+  .option(
+    "--notification",
+    "Include @mantine/notifications CSS in the output file",
+    {
+      default: false,
+    }
+  )
+  .option("--spotlight", "Include @mantine/spotlight CSS in the output file", {
     default: false,
   })
-  .option("--carousel", "Include Mantine carousel imports", {
+  .option("--carousel", "Include @mantine/carousel CSS in the output file", {
     default: false,
   })
-  .option("--dropzone", "Include Mantine dropzone imports", {
+  .option("--dropzone", "Include @mantine/dropzone CSS in the output file", {
     default: false,
   })
-  .option("--nprogress", "Include Mantine navigationprogress imports", {
+  .option("--nprogress", "Include @mantine/nprogress CSS in the output file", {
     default: false,
   })
-  .option("--dates", "Include Mantine dates imports", { default: false })
-  .option("--charts", "Include Mantine charts imports", { default: false })
-  .action((dir, options) => {
+  .action((options) => {
     const data = extractMantineImports({
-      directory: dir,
+      directory: options.in,
       code_highlight: options.code_highlight,
       notification: options.notification,
       spotlight: options.spotlight,
