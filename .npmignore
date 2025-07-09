@@ -1,0 +1,7 @@
+scripts/
+mantine/
+example/
+tsconfig.*
+.gitignore
+.gitsubmodules
+src/

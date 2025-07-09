@@ -1,0 +1,3 @@
+[submodule "mantine"]
+	path = mantine
+	url = https://github.com/mantinedev/mantine.git

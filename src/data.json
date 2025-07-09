@@ -1,0 +1,1177 @@
+[
+  {
+    "name": "Accordion",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Accordion.css",
+    "dependency": [
+      "Collapse",
+      "UnstyledButton"
+    ]
+  },
+  {
+    "name": "ActionIcon",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/ActionIcon.css",
+    "dependency": [
+      "Loader",
+      "UnstyledButton",
+      "Transition"
+    ]
+  },
+  {
+    "name": "Affix",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Affix.css",
+    "dependency": [
+      "Portal"
+    ]
+  },
+  {
+    "name": "Alert",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Alert.css",
+    "dependency": [
+      "CloseButton"
+    ]
+  },
+  {
+    "name": "Anchor",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Anchor.css",
+    "dependency": [
+      "Text"
+    ]
+  },
+  {
+    "name": "AngleSlider",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/AngleSlider.css",
+    "dependency": []
+  },
+  {
+    "name": "AppShell",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/AppShell.css",
+    "dependency": []
+  },
+  {
+    "name": "AspectRatio",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/AspectRatio.css",
+    "dependency": []
+  },
+  {
+    "name": "Autocomplete",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Autocomplete.css",
+    "dependency": [
+      "Combobox",
+      "InputBase",
+      "ScrollArea",
+      "Input"
+    ]
+  },
+  {
+    "name": "Avatar",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Avatar.css",
+    "dependency": []
+  },
+  {
+    "name": "BackgroundImage",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/BackgroundImage.css",
+    "dependency": []
+  },
+  {
+    "name": "Badge",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Badge.css",
+    "dependency": []
+  },
+  {
+    "name": "Blockquote",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Blockquote.css",
+    "dependency": []
+  },
+  {
+    "name": "Breadcrumbs",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Breadcrumbs.css",
+    "dependency": []
+  },
+  {
+    "name": "Burger",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Burger.css",
+    "dependency": [
+      "UnstyledButton"
+    ]
+  },
+  {
+    "name": "Button",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Button.css",
+    "dependency": [
+      "Loader",
+      "UnstyledButton",
+      "Transition"
+    ]
+  },
+  {
+    "name": "Card",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Card.css",
+    "dependency": [
+      "Paper"
+    ]
+  },
+  {
+    "name": "Center",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Center.css",
+    "dependency": []
+  },
+  {
+    "name": "Checkbox",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Checkbox.css",
+    "dependency": [
+      "InlineInput",
+      "UnstyledButton",
+      "InputsGroupFieldset",
+      "Input"
+    ]
+  },
+  {
+    "name": "Chip",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Chip.css",
+    "dependency": [
+      "Checkbox"
+    ]
+  },
+  {
+    "name": "CloseButton",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/CloseButton.css",
+    "dependency": [
+      "UnstyledButton"
+    ]
+  },
+  {
+    "name": "Code",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Code.css",
+    "dependency": []
+  },
+  {
+    "name": "Collapse",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Collapse.css",
+    "dependency": []
+  },
+  {
+    "name": "ColorInput",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/ColorInput.css",
+    "dependency": [
+      "ColorPicker",
+      "InputBase",
+      "ActionIcon",
+      "Popover",
+      "Input",
+      "ColorSwatch"
+    ]
+  },
+  {
+    "name": "ColorPicker",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/ColorPicker.css",
+    "dependency": [
+      "ColorSwatch"
+    ]
+  },
+  {
+    "name": "ColorSwatch",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/ColorSwatch.css",
+    "dependency": []
+  },
+  {
+    "name": "Combobox",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Combobox.css",
+    "dependency": [
+      "Checkbox",
+      "Popover",
+      "Input"
+    ]
+  },
+  {
+    "name": "Container",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Container.css",
+    "dependency": []
+  },
+  {
+    "name": "CopyButton",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/CopyButton.css",
+    "dependency": []
+  },
+  {
+    "name": "Dialog",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Dialog.css",
+    "dependency": [
+      "CloseButton",
+      "Paper",
+      "Transition",
+      "Affix"
+    ]
+  },
+  {
+    "name": "Divider",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Divider.css",
+    "dependency": []
+  },
+  {
+    "name": "Drawer",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Drawer.css",
+    "dependency": [
+      "ModalBase"
+    ]
+  },
+  {
+    "name": "Fieldset",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Fieldset.css",
+    "dependency": []
+  },
+  {
+    "name": "FileButton",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/FileButton.css",
+    "dependency": []
+  },
+  {
+    "name": "FileInput",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/FileInput.css",
+    "dependency": [
+      "CloseButton",
+      "FileButton",
+      "Input"
+    ]
+  },
+  {
+    "name": "Flex",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Flex.css",
+    "dependency": []
+  },
+  {
+    "name": "FloatingIndicator",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/FloatingIndicator.css",
+    "dependency": []
+  },
+  {
+    "name": "FocusTrap",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/FocusTrap.css",
+    "dependency": [
+      "VisuallyHidden"
+    ]
+  },
+  {
+    "name": "Grid",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Grid.css",
+    "dependency": []
+  },
+  {
+    "name": "Group",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Group.css",
+    "dependency": []
+  },
+  {
+    "name": "Highlight",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Highlight.css",
+    "dependency": [
+      "Mark",
+      "Text"
+    ]
+  },
+  {
+    "name": "HoverCard",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/HoverCard.css",
+    "dependency": [
+      "Popover",
+      "Floating"
+    ]
+  },
+  {
+    "name": "Image",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Image.css",
+    "dependency": []
+  },
+  {
+    "name": "Indicator",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Indicator.css",
+    "dependency": []
+  },
+  {
+    "name": "InlineInput",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/InlineInput.css",
+    "dependency": [
+      "Input"
+    ]
+  },
+  {
+    "name": "Input",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Input.css",
+    "dependency": [
+      "CloseButton"
+    ]
+  },
+  {
+    "name": "InputBase",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/InputBase.css",
+    "dependency": [
+      "Input"
+    ]
+  },
+  {
+    "name": "InputsGroupFieldset",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/InputsGroupFieldset.css",
+    "dependency": [
+      "Input"
+    ]
+  },
+  {
+    "name": "JsonInput",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/JsonInput.css",
+    "dependency": [
+      "InputBase",
+      "Textarea",
+      "Input"
+    ]
+  },
+  {
+    "name": "Kbd",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Kbd.css",
+    "dependency": []
+  },
+  {
+    "name": "List",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/List.css",
+    "dependency": []
+  },
+  {
+    "name": "Loader",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Loader.css",
+    "dependency": []
+  },
+  {
+    "name": "LoadingOverlay",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/LoadingOverlay.css",
+    "dependency": [
+      "Loader",
+      "Overlay",
+      "Transition"
+    ]
+  },
+  {
+    "name": "Mark",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Mark.css",
+    "dependency": []
+  },
+  {
+    "name": "Menu",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Menu.css",
+    "dependency": [
+      "Transition",
+      "UnstyledButton",
+      "Floating",
+      "Accordion",
+      "Popover"
+    ]
+  },
+  {
+    "name": "Modal",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Modal.css",
+    "dependency": [
+      "ModalBase"
+    ]
+  },
+  {
+    "name": "ModalBase",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/ModalBase.css",
+    "dependency": [
+      "Portal",
+      "Transition"
+    ]
+  },
+  {
+    "name": "MultiSelect",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/MultiSelect.css",
+    "dependency": [
+      "ScrollArea",
+      "Pill",
+      "Combobox",
+      "InputBase",
+      "Input",
+      "PillsInput"
+    ]
+  },
+  {
+    "name": "NativeSelect",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/NativeSelect.css",
+    "dependency": [
+      "Combobox",
+      "InputBase",
+      "Input"
+    ]
+  },
+  {
+    "name": "NavLink",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/NavLink.css",
+    "dependency": [
+      "Collapse",
+      "Accordion",
+      "UnstyledButton"
+    ]
+  },
+  {
+    "name": "Notification",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Notification.css",
+    "dependency": [
+      "CloseButton",
+      "Loader"
+    ]
+  },
+  {
+    "name": "NumberFormatter",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/NumberFormatter.css",
+    "dependency": []
+  },
+  {
+    "name": "NumberInput",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/NumberInput.css",
+    "dependency": [
+      "InputBase",
+      "UnstyledButton",
+      "Input"
+    ]
+  },
+  {
+    "name": "Overlay",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Overlay.css",
+    "dependency": []
+  },
+  {
+    "name": "Pagination",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Pagination.css",
+    "dependency": [
+      "UnstyledButton"
+    ]
+  },
+  {
+    "name": "Paper",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Paper.css",
+    "dependency": []
+  },
+  {
+    "name": "PasswordInput",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/PasswordInput.css",
+    "dependency": [
+      "InputBase",
+      "ActionIcon",
+      "Input"
+    ]
+  },
+  {
+    "name": "Pill",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Pill.css",
+    "dependency": [
+      "CloseButton"
+    ]
+  },
+  {
+    "name": "PillsInput",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/PillsInput.css",
+    "dependency": [
+      "InputBase",
+      "Input"
+    ]
+  },
+  {
+    "name": "PinInput",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/PinInput.css",
+    "dependency": [
+      "InputBase",
+      "Group",
+      "Input"
+    ]
+  },
+  {
+    "name": "Popover",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Popover.css",
+    "dependency": [
+      "Overlay",
+      "Transition",
+      "Floating",
+      "FocusTrap",
+      "Portal"
+    ]
+  },
+  {
+    "name": "Portal",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Portal.css",
+    "dependency": []
+  },
+  {
+    "name": "Progress",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Progress.css",
+    "dependency": []
+  },
+  {
+    "name": "Radio",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Radio.css",
+    "dependency": [
+      "InlineInput",
+      "UnstyledButton",
+      "InputsGroupFieldset",
+      "Input"
+    ]
+  },
+  {
+    "name": "Rating",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Rating.css",
+    "dependency": []
+  },
+  {
+    "name": "RingProgress",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/RingProgress.css",
+    "dependency": [
+      "Tooltip"
+    ]
+  },
+  {
+    "name": "ScrollArea",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/ScrollArea.css",
+    "dependency": []
+  },
+  {
+    "name": "SegmentedControl",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/SegmentedControl.css",
+    "dependency": [
+      "FloatingIndicator"
+    ]
+  },
+  {
+    "name": "Select",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Select.css",
+    "dependency": [
+      "Combobox",
+      "InputBase",
+      "ScrollArea",
+      "Input"
+    ]
+  },
+  {
+    "name": "SemiCircleProgress",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/SemiCircleProgress.css",
+    "dependency": []
+  },
+  {
+    "name": "SimpleGrid",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/SimpleGrid.css",
+    "dependency": []
+  },
+  {
+    "name": "Skeleton",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Skeleton.css",
+    "dependency": []
+  },
+  {
+    "name": "Space",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Space.css",
+    "dependency": []
+  },
+  {
+    "name": "Spoiler",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Spoiler.css",
+    "dependency": [
+      "Anchor"
+    ]
+  },
+  {
+    "name": "Stack",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Stack.css",
+    "dependency": []
+  },
+  {
+    "name": "Stepper",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Stepper.css",
+    "dependency": [
+      "Loader",
+      "UnstyledButton",
+      "Checkbox",
+      "Transition"
+    ]
+  },
+  {
+    "name": "Switch",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Switch.css",
+    "dependency": [
+      "InlineInput",
+      "InputsGroupFieldset",
+      "Input"
+    ]
+  },
+  {
+    "name": "Table",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Table.css",
+    "dependency": []
+  },
+  {
+    "name": "TableOfContents",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/TableOfContents.css",
+    "dependency": [
+      "UnstyledButton"
+    ]
+  },
+  {
+    "name": "Tabs",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Tabs.css",
+    "dependency": [
+      "UnstyledButton"
+    ]
+  },
+  {
+    "name": "TagsInput",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/TagsInput.css",
+    "dependency": [
+      "ScrollArea",
+      "Pill",
+      "Combobox",
+      "InputBase",
+      "Input",
+      "PillsInput"
+    ]
+  },
+  {
+    "name": "Text",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Text.css",
+    "dependency": []
+  },
+  {
+    "name": "Textarea",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Textarea.css",
+    "dependency": [
+      "InputBase",
+      "Input"
+    ]
+  },
+  {
+    "name": "TextInput",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/TextInput.css",
+    "dependency": [
+      "InputBase",
+      "Input"
+    ]
+  },
+  {
+    "name": "ThemeIcon",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/ThemeIcon.css",
+    "dependency": []
+  },
+  {
+    "name": "Timeline",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Timeline.css",
+    "dependency": []
+  },
+  {
+    "name": "Title",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Title.css",
+    "dependency": []
+  },
+  {
+    "name": "Tooltip",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Tooltip.css",
+    "dependency": [
+      "Portal",
+      "Transition",
+      "Floating"
+    ]
+  },
+  {
+    "name": "Transition",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Transition.css",
+    "dependency": []
+  },
+  {
+    "name": "Tree",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/Tree.css",
+    "dependency": []
+  },
+  {
+    "name": "TypographyStylesProvider",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/TypographyStylesProvider.css",
+    "dependency": []
+  },
+  {
+    "name": "UnstyledButton",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/UnstyledButton.css",
+    "dependency": []
+  },
+  {
+    "name": "VisuallyHidden",
+    "module": "@mantine/core",
+    "css_name": "@mantine/core/styles/VisuallyHidden.css",
+    "dependency": []
+  },
+  {
+    "name": "Calendar",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "CalendarHeader",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": [
+      "UnstyledButton"
+    ]
+  },
+  {
+    "name": "DateInput",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": [
+      "CloseButton",
+      "Popover",
+      "Input"
+    ]
+  },
+  {
+    "name": "DateInputMask",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": [
+      "InputBase",
+      "Popover"
+    ]
+  },
+  {
+    "name": "DatePicker",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": [
+      "UnstyledButton"
+    ]
+  },
+  {
+    "name": "DatePickerInput",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "DatesProvider",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "DateTimePicker",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": [
+      "ActionIcon"
+    ]
+  },
+  {
+    "name": "Day",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": [
+      "UnstyledButton"
+    ]
+  },
+  {
+    "name": "DecadeLevel",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "DecadeLevelGroup",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "HiddenDatesInput",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "LevelsGroup",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "Month",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "MonthLevel",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "MonthLevelGroup",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "MonthPicker",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "MonthPickerInput",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "MonthsList",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "PickerControl",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": [
+      "UnstyledButton"
+    ]
+  },
+  {
+    "name": "PickerInputBase",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": [
+      "Popover",
+      "Modal",
+      "Input"
+    ]
+  },
+  {
+    "name": "SpinInput",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "TimeGrid",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": [
+      "SimpleGrid"
+    ]
+  },
+  {
+    "name": "TimeInput",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": [
+      "InputBase"
+    ]
+  },
+  {
+    "name": "TimePicker",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": [
+      "SimpleGrid",
+      "ScrollArea",
+      "InputBase",
+      "Popover",
+      "CloseButton"
+    ]
+  },
+  {
+    "name": "TimeValue",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "WeekdaysRow",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "YearLevel",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "YearLevelGroup",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "YearPicker",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "YearPickerInput",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "YearsList",
+    "module": "@mantine/dates",
+    "css_name": "@mantine/dates/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "AreaChart",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "BarChart",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "BubbleChart",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": [
+      "Group",
+      "Text"
+    ]
+  },
+  {
+    "name": "ChartLegend",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": [
+      "ColorSwatch"
+    ]
+  },
+  {
+    "name": "ChartTooltip",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "CompositeChart",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "DonutChart",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "FunnelChart",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "Heatmap",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": [
+      "Tooltip"
+    ]
+  },
+  {
+    "name": "LineChart",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "PieChart",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "PointLabel",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "RadarChart",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "RadialBarChart",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": [
+      "Paper",
+      "ColorSwatch",
+      "Group"
+    ]
+  },
+  {
+    "name": "ScatterChart",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "Sparkline",
+    "module": "@mantine/charts",
+    "css_name": "@mantine/charts/styles.css",
+    "dependency": []
+  },
+  {
+    "name": "@mantine/notifications",
+    "module": "@mantine/notifications",
+    "css_name": "@mantine/notifications/styles.css",
+    "dependency": [
+      "Notification"
+    ]
+  },
+  {
+    "name": "@mantine/spotlight",
+    "module": "@mantine/spotlight",
+    "css_name": "@mantine/spotlight/styles.css",
+    "dependency": [
+      "Highlight",
+      "ScrollArea",
+      "UnstyledButton",
+      "Modal",
+      "Input"
+    ]
+  },
+  {
+    "name": "@mantine/carousel",
+    "module": "@mantine/carousel",
+    "css_name": "@mantine/carousel/styles.css",
+    "dependency": [
+      "UnstyledButton"
+    ]
+  },
+  {
+    "name": "@mantine/dropzone",
+    "module": "@mantine/dropzone",
+    "css_name": "@mantine/dropzone/styles.css",
+    "dependency": [
+      "LoadingOverlay"
+    ]
+  },
+  {
+    "name": "@mantine/nprogress",
+    "module": "@mantine/nprogress",
+    "css_name": "@mantine/nprogress/styles.css",
+    "dependency": [
+      "Progress"
+    ]
+  }
+]

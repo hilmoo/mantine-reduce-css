@@ -1,0 +1,350 @@
+[
+    {
+        "component": "Accordion",
+        "cssPath": "@mantine/core/styles/Accordion.css"
+    },
+    {
+        "component": "ActionIcon",
+        "cssPath": "@mantine/core/styles/ActionIcon.css"
+    },
+    {
+        "component": "Affix",
+        "cssPath": "@mantine/core/styles/Affix.css"
+    },
+    {
+        "component": "Alert",
+        "cssPath": "@mantine/core/styles/Alert.css"
+    },
+    {
+        "component": "Anchor",
+        "cssPath": "@mantine/core/styles/Anchor.css"
+    },
+    {
+        "component": "AngleSlider",
+        "cssPath": "@mantine/core/styles/AngleSlider.css"
+    },
+    {
+        "component": "AppShell",
+        "cssPath": "@mantine/core/styles/AppShell.css"
+    },
+    {
+        "component": "AspectRatio",
+        "cssPath": "@mantine/core/styles/AspectRatio.css"
+    },
+    {
+        "component": "Avatar",
+        "cssPath": "@mantine/core/styles/Avatar.css"
+    },
+    {
+        "component": "BackgroundImage",
+        "cssPath": "@mantine/core/styles/BackgroundImage.css"
+    },
+    {
+        "component": "Badge",
+        "cssPath": "@mantine/core/styles/Badge.css"
+    },
+    {
+        "component": "Blockquote",
+        "cssPath": "@mantine/core/styles/Blockquote.css"
+    },
+    {
+        "component": "Breadcrumbs",
+        "cssPath": "@mantine/core/styles/Breadcrumbs.css"
+    },
+    {
+        "component": "Burger",
+        "cssPath": "@mantine/core/styles/Burger.css"
+    },
+    {
+        "component": "Button",
+        "cssPath": "@mantine/core/styles/Button.css"
+    },
+    {
+        "component": "Card",
+        "cssPath": "@mantine/core/styles/Card.css"
+    },
+    {
+        "component": "Center",
+        "cssPath": "@mantine/core/styles/Center.css"
+    },
+    {
+        "component": "Checkbox",
+        "cssPath": "@mantine/core/styles/Checkbox.css"
+    },
+    {
+        "component": "Chip",
+        "cssPath": "@mantine/core/styles/Chip.css"
+    },
+    {
+        "component": "CloseButton",
+        "cssPath": "@mantine/core/styles/CloseButton.css"
+    },
+    {
+        "component": "Code",
+        "cssPath": "@mantine/core/styles/Code.css"
+    },
+    {
+        "component": "ColorInput",
+        "cssPath": "@mantine/core/styles/ColorInput.css"
+    },
+    {
+        "component": "ColorPicker",
+        "cssPath": "@mantine/core/styles/ColorPicker.css"
+    },
+    {
+        "component": "ColorSwatch",
+        "cssPath": "@mantine/core/styles/ColorSwatch.css"
+    },
+    {
+        "component": "Combobox",
+        "cssPath": "@mantine/core/styles/Combobox.css"
+    },
+    {
+        "component": "Container",
+        "cssPath": "@mantine/core/styles/Container.css"
+    },
+    {
+        "component": "Dialog",
+        "cssPath": "@mantine/core/styles/Dialog.css"
+    },
+    {
+        "component": "Divider",
+        "cssPath": "@mantine/core/styles/Divider.css"
+    },
+    {
+        "component": "Drawer",
+        "cssPath": "@mantine/core/styles/Drawer.css"
+    },
+    {
+        "component": "Fieldset",
+        "cssPath": "@mantine/core/styles/Fieldset.css"
+    },
+    {
+        "component": "Flex",
+        "cssPath": "@mantine/core/styles/Flex.css"
+    },
+    {
+        "component": "FloatingIndicator",
+        "cssPath": "@mantine/core/styles/FloatingIndicator.css"
+    },
+    {
+        "component": "Group",
+        "cssPath": "@mantine/core/styles/Group.css"
+    },
+    {
+        "component": "Grid",
+        "cssPath": "@mantine/core/styles/Grid.css"
+    },
+    {
+        "component": "Image",
+        "cssPath": "@mantine/core/styles/Image.css"
+    },
+    {
+        "component": "InlineInput",
+        "cssPath": "@mantine/core/styles/InlineInput.css"
+    },
+    {
+        "component": "Input",
+        "cssPath": "@mantine/core/styles/Input.css"
+    },
+    {
+        "component": "Indicator",
+        "cssPath": "@mantine/core/styles/Indicator.css"
+    },
+    {
+        "component": "Kbd",
+        "cssPath": "@mantine/core/styles/Kbd.css"
+    },
+    {
+        "component": "List",
+        "cssPath": "@mantine/core/styles/List.css"
+    },
+    {
+        "component": "Loader",
+        "cssPath": "@mantine/core/styles/Loader.css"
+    },
+    {
+        "component": "LoadingOverlay",
+        "cssPath": "@mantine/core/styles/LoadingOverlay.css"
+    },
+    {
+        "component": "Mark",
+        "cssPath": "@mantine/core/styles/Mark.css"
+    },
+    {
+        "component": "Menu",
+        "cssPath": "@mantine/core/styles/Menu.css"
+    },
+    {
+        "component": "Modal",
+        "cssPath": "@mantine/core/styles/Modal.css"
+    },
+    {
+        "component": "ModalBase",
+        "cssPath": "@mantine/core/styles/ModalBase.css"
+    },
+    {
+        "component": "NavLink",
+        "cssPath": "@mantine/core/styles/NavLink.css"
+    },
+    {
+        "component": "Notification",
+        "cssPath": "@mantine/core/styles/Notification.css"
+    },
+    {
+        "component": "NumberInput",
+        "cssPath": "@mantine/core/styles/NumberInput.css"
+    },
+    {
+        "component": "Overlay",
+        "cssPath": "@mantine/core/styles/Overlay.css"
+    },
+    {
+        "component": "Pagination",
+        "cssPath": "@mantine/core/styles/Pagination.css"
+    },
+    {
+        "component": "Paper",
+        "cssPath": "@mantine/core/styles/Paper.css"
+    },
+    {
+        "component": "PasswordInput",
+        "cssPath": "@mantine/core/styles/PasswordInput.css"
+    },
+    {
+        "component": "Pill",
+        "cssPath": "@mantine/core/styles/Pill.css"
+    },
+    {
+        "component": "PillsInput",
+        "cssPath": "@mantine/core/styles/PillsInput.css"
+    },
+    {
+        "component": "PinInput",
+        "cssPath": "@mantine/core/styles/PinInput.css"
+    },
+    {
+        "component": "Popover",
+        "cssPath": "@mantine/core/styles/Popover.css"
+    },
+    {
+        "component": "Progress",
+        "cssPath": "@mantine/core/styles/Progress.css"
+    },
+    {
+        "component": "Radio",
+        "cssPath": "@mantine/core/styles/Radio.css"
+    },
+    {
+        "component": "Rating",
+        "cssPath": "@mantine/core/styles/Rating.css"
+    },
+    {
+        "component": "RingProgress",
+        "cssPath": "@mantine/core/styles/RingProgress.css"
+    },
+    {
+        "component": "ScrollArea",
+        "cssPath": "@mantine/core/styles/ScrollArea.css"
+    },
+    {
+        "component": "SegmentedControl",
+        "cssPath": "@mantine/core/styles/SegmentedControl.css"
+    },
+    {
+        "component": "SemiCircleProgress",
+        "cssPath": "@mantine/core/styles/SemiCircleProgress.css"
+    },
+    {
+        "component": "SimpleGrid",
+        "cssPath": "@mantine/core/styles/SimpleGrid.css"
+    },
+    {
+        "component": "Skeleton",
+        "cssPath": "@mantine/core/styles/Skeleton.css"
+    },
+    {
+        "component": "Slider",
+        "cssPath": "@mantine/core/styles/Slider.css"
+    },
+    {
+        "component": "Spoiler",
+        "cssPath": "@mantine/core/styles/Spoiler.css"
+    },
+    {
+        "component": "Stack",
+        "cssPath": "@mantine/core/styles/Stack.css"
+    },
+    {
+        "component": "Switch",
+        "cssPath": "@mantine/core/styles/Switch.css"
+    },
+    {
+        "component": "Stepper",
+        "cssPath": "@mantine/core/styles/Stepper.css"
+    },
+    {
+        "component": "TableOfContents",
+        "cssPath": "@mantine/core/styles/TableOfContents.css"
+    },
+    {
+        "component": "Table",
+        "cssPath": "@mantine/core/styles/Table.css"
+    },
+    {
+        "component": "Tabs",
+        "cssPath": "@mantine/core/styles/Tabs.css"
+    },
+    {
+        "component": "ThemeIcon",
+        "cssPath": "@mantine/core/styles/ThemeIcon.css"
+    },
+    {
+        "component": "Timeline",
+        "cssPath": "@mantine/core/styles/Timeline.css"
+    },
+    {
+        "component": "Text",
+        "cssPath": "@mantine/core/styles/Text.css"
+    },
+    {
+        "component": "Tooltip",
+        "cssPath": "@mantine/core/styles/Tooltip.css"
+    },
+    {
+        "component": "Title",
+        "cssPath": "@mantine/core/styles/Title.css"
+    },
+    {
+        "component": "Tree",
+        "cssPath": "@mantine/core/styles/Tree.css"
+    },
+    {
+        "component": "TypographyStylesProvider",
+        "cssPath": "@mantine/core/styles/TypographyStylesProvider.css"
+    },
+    {
+        "component": "UnstyledButton",
+        "cssPath": "@mantine/core/styles/UnstyledButton.css"
+    },
+    {
+        "component": "VisuallyHidden",
+        "cssPath": "@mantine/core/styles/VisuallyHidden.css"
+    },
+    {
+        "component": "CheckboxCard",
+        "cssPath": "@mantine/core/styles/CheckboxCard.css"
+    },
+    {
+        "component": "CheckboxIndicator",
+        "cssPath": "@mantine/core/styles/CheckboxIndicator.css"
+    },
+    {
+        "component": "RadioIndicator",
+        "cssPath": "@mantine/core/styles/RadioIndicator.css"
+    },
+    {
+        "component": "RadioCard",
+        "cssPath": "@mantine/core/styles/RadioCard.css"
+    }
+]
