@@ -12,7 +12,11 @@ type MantineData = {
 const mantine_top =
   "@import '@mantine/core/styles/baseline.css';\n@import '@mantine/core/styles/default-css-variables.css';\n@import '@mantine/core/styles/global.css';\n";
 
-export function generateCssFiles(data: Set<string>, outfile: string) {
+export function generateCssFiles(
+  data: Set<string>,
+  outfile: string,
+  base: boolean
+) {
   const mData = mantineData as MantineData[];
   const hierarchyData = hierarchy as string[];
 
@@ -67,8 +71,12 @@ export function generateCssFiles(data: Set<string>, outfile: string) {
     .filter(Boolean);
 
   const cssContent = cssImports.join("\n");
-  const finalCssContent = mantine_top + cssContent;
-  writeFileSync(outfile, finalCssContent);
+  if (base) {
+    const finalCssContent = mantine_top + cssContent;
+    writeFileSync(outfile, finalCssContent);
+  } else {
+    writeFileSync(outfile, cssContent);
+  }
 
   return cssContent;
 }

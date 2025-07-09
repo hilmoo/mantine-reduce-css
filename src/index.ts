@@ -11,6 +11,9 @@ cli
   .option("--out <file>", "Output file to save the results", {
     default: "mantine.css",
   })
+  .option("--base", "Include Mantine global imports", {
+    default: true,
+  })
   .option("--core", "Include Mantine core imports", { default: true })
   .option("--code_highlight", "Include Mantine code highlight imports", {
     default: false,
@@ -45,7 +48,7 @@ cli
       charts: options.charts,
       core: options.core,
     });
-    generateCssFiles(data, options.out);
+    generateCssFiles(data, options.out, options.base);
   });
 
 cli.help();
