@@ -26,6 +26,7 @@ def list_mantine_component(
                 continue
             dependency = list(extract_dependency_import(tsx_path, 1))
 
+            css_name = ""
             if component_name in css_file:
                 css_name = f"@mantine/core/styles/{component_name}.css"
 
@@ -33,7 +34,7 @@ def list_mantine_component(
                 components_dict[component_name] = {
                     "name": component_name,
                     "module": "@mantine/core",
-                    "css_name": f"@mantine/core/styles/{component_name}.css",
+                    "css_name": css_name,
                     "dependency": set(dependency),
                 }
             else:

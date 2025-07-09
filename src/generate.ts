@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from "fs";
+import { writeFileSync } from "fs";
 import mantineData from "./data.json";
 import hierarchy from "./hierarchy.json";
 
@@ -66,7 +66,9 @@ export function generateCssFiles(
   const cssImports = sortedComponents
     .map((componentName) => {
       const component = componentMap.get(componentName);
-      return component ? `@import "${component.css_name}";` : null;
+      return component && component.css_name
+        ? `@import "${component.css_name}";`
+        : null;
     })
     .filter(Boolean);
 
