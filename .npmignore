@@ -1,6 +1,5 @@
 scripts/
 mantine/
-example/
 tsconfig.*
 .gitignore
 .gitsubmodules

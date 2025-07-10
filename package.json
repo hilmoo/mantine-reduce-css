@@ -1,7 +1,7 @@
 {
   "name": "mantine-reduce-css",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "cli tool for reducing global css for mantine",
   "bin": {
     "mantine-reduce-css": "./dist/index.js"
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hilmoo/mantine-reduce-css"
+    "url": "git+https://github.com/hilmoo/mantine-reduce-css.git"
   },
   "keywords": [
     "mantine"
