@@ -33,7 +33,7 @@ mantine-reduce-css run --notification --dates
 For more info, run:
 
 ```sh
-mantine-reduce-css --help
+mantine-reduce-css run --help
 ```
 
 # License
