@@ -15,19 +15,19 @@ $ npx mantine-reduce-css run [options]
 Scan the current directory and output to `mantine.css`:
 
 ```sh
-mantine-reduce-css
+mantine-reduce-css run
 ```
 
 Scan a specific directory and output to a custom file:
 
 ```sh
-mantine-reduce-css --in ./src --out custom-mantine.css
+mantine-reduce-css run --in ./src --out custom-mantine.css
 ```
 
 Only inclue `@mantine/dates` and `@mantine/notifications`:
 
 ```sh
-mantine-reduce-css --notification --dates
+mantine-reduce-css run --notification --dates
 ```
 
 For more info, run:
