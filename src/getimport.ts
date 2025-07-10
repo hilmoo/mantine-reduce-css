@@ -13,6 +13,7 @@ export type extractMantineImportsType = {
   charts: boolean;
   core: boolean;
   tiptap: boolean;
+  extensions: string[];
 };
 export function extractMantineImports(props: extractMantineImportsType) {
   const allResults = new Set<string>();
@@ -45,7 +46,10 @@ export function extractMantineImports(props: extractMantineImportsType) {
       const fullPath = join(dir, entry.name);
       if (entry.isDirectory()) {
         processDirectory(fullPath, allResults);
-      } else if (entry.isFile() && /\.(jsx|tsx)$/.test(entry.name)) {
+      } else if (
+        entry.isFile() &&
+        props.extensions.some((ext) => entry.name.endsWith(ext))
+      ) {
         processFile(fullPath, allResults);
       }
     }

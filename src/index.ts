@@ -55,6 +55,9 @@ cli
   .option("--tiptap", "Include @mantine/tiptap CSS in the output file", {
     default: false,
   })
+  .option("--ext <extension>", "File extension to scan for Mantine imports", {
+    default: ["tsx", "jsx"],
+  })
   .action((options) => {
     const data = extractMantineImports({
       directory: options.in,
@@ -68,7 +71,9 @@ cli
       charts: options.charts,
       core: options.core,
       tiptap: options.tiptap,
+      extensions: options.ext,
     });
+
     generateCssFiles(data, options.out, options.base);
   });
 
