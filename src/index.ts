@@ -52,6 +52,9 @@ cli
   .option("--nprogress", "Include @mantine/nprogress CSS in the output file", {
     default: false,
   })
+  .option("--tiptap", "Include @mantine/tiptap CSS in the output file", {
+    default: false,
+  })
   .action((options) => {
     const data = extractMantineImports({
       directory: options.in,
@@ -64,6 +67,7 @@ cli
       dates: options.dates,
       charts: options.charts,
       core: options.core,
+      tiptap: options.tiptap,
     });
     generateCssFiles(data, options.out, options.base);
   });

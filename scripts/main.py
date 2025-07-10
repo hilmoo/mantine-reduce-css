@@ -4,7 +4,7 @@ import shutil
 from collections import defaultdict, deque
 
 from core import list_mantine_component
-from ext import flat, tree
+from ext import flat, tree, flat_tree
 
 
 def build_dependency_graph(components):
@@ -67,6 +67,11 @@ if __name__ == "__main__":
     # Mantine Ext Chart
     dir = os.path.join(mantine_root, "charts", "src")
     components = tree(dir, "@mantine/charts", "@mantine/charts/styles.css", non_core)
+    full_components.extend(components)
+
+    # Mantine Ext Tiptap
+    dir = os.path.join(mantine_root, "tiptap", "src")
+    components = flat_tree(dir, "@mantine/tiptap", "@mantine/tiptap/styles.css", non_core)
     full_components.extend(components)
 
     # Mantine Ext CodeHighlight

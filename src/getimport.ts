@@ -12,6 +12,7 @@ export type extractMantineImportsType = {
   dates: boolean;
   charts: boolean;
   core: boolean;
+  tiptap: boolean;
 };
 export function extractMantineImports(props: extractMantineImportsType) {
   const allResults = new Set<string>();
@@ -33,6 +34,9 @@ export function extractMantineImports(props: extractMantineImportsType) {
   }
   if (props.nprogress) {
     allResults.add("@mantine/nprogress");
+  }
+  if (props.tiptap) {
+    allResults.add("@mantine/tiptap");
   }
 
   function processDirectory(dir: string, allResults: Set<string>) {

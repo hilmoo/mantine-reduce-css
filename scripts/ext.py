@@ -83,7 +83,7 @@ def tree(base_dir: str, lib: str, css_name: str, non_core: set[str]):
             if component_name not in components_dict:
                 components_dict[component_name] = {
                     "name": component_name,
-                    "module": f"{lib}",
+                    "module": lib,
                     "css_name": css_name,
                     "dependency": set(dependency),
                 }
@@ -108,3 +108,33 @@ def tree(base_dir: str, lib: str, css_name: str, non_core: set[str]):
         components.append(comp)
 
     return components
+
+
+def flat_tree(base_dir: str, lib: str, css_name: str, non_core: set[str]):
+    abs_base_dir = os.path.abspath(base_dir)
+    dependencies = set()
+
+    for entry in os.listdir(abs_base_dir):
+        full_path = os.path.join(abs_base_dir, entry)
+        if os.path.isdir(full_path):
+            component_name = os.path.basename(full_path)
+            tsx_path = os.path.join(full_path, f"{component_name}.tsx")
+            if os.path.isfile(tsx_path):
+                deps = [dep for dep in extract_dependency_import(tsx_path, 1) if dep in non_core]
+                dependencies.update(deps)
+
+            for subentry in os.listdir(full_path):
+                sub_path = os.path.join(full_path, subentry)
+                if os.path.isdir(sub_path):
+                    sub_tsx_path = os.path.join(sub_path, f"{subentry}.tsx")
+                    if os.path.isfile(sub_tsx_path):
+                        sub_deps = extract_dependency_import(sub_tsx_path, 2)
+                        dependencies.update([dep for dep in sub_deps if dep in non_core])
+
+    component = {
+        "name": lib,
+        "module": lib,
+        "css_name": css_name,
+        "dependency": list(dependencies),
+    }
+    return [component]
