@@ -3,8 +3,9 @@
 A CLI tool to generate a reduced CSS bundle for your Mantine-based project by scanning your codebase for Mantine imports.
 
 > [!NOTE]
-> This package supports Mantine v8.1.0 and above.
-> The current version is `8.1.3`.
+> This package supports Mantine v8.1.0 and above (it probably works with earlier versions, but is not tested).
+> The current mantine version is `8.1.3`.
+> It is recommended to use the latest version of Mantine.
 
 ## Usage
 
