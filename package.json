@@ -1,7 +1,7 @@
 {
   "name": "mantine-reduce-css",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "cli tool for reducing global css for mantine",
   "bin": {
     "mantine-reduce-css": "./dist/index.js"
@@ -10,10 +10,6 @@
     "build": "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.js",
     "start": "tsx src/index.ts example --out main.css"
   },
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/hilmoo/mantine-reduce-css"
