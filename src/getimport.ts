@@ -41,7 +41,7 @@ export function extractMantineImports(props: extractMantineImportsType) {
       const fullPath = join(dir, entry.name);
       if (entry.isDirectory()) {
         processDirectory(fullPath, allResults);
-      } else if (entry.isFile() && /\.(js|jsx|ts|tsx)$/.test(entry.name)) {
+      } else if (entry.isFile() && /\.(jsx|tsx)$/.test(entry.name)) {
         processFile(fullPath, allResults);
       }
     }
@@ -54,10 +54,10 @@ export function extractMantineImports(props: extractMantineImportsType) {
       // @mantine/core
       if (props.core) {
         const corePackage =
-          /import\s*\{([\s\S]*?)\}\s*from\s*["']@mantine\/core["']/g;
-        let matchCorePackage;
-        while ((matchCorePackage = corePackage.exec(content)) !== null) {
-          const imports = matchCorePackage[1];
+          /import\s*\{([^}]*)\}\s*from\s*["']@mantine\/core["']/;
+        let m;
+        if ((m = content.match(corePackage)) !== null) {
+          const imports = m[1];
           imports.split(",").forEach((item) => {
             const comp = item.trim().split(" as ")[0];
             if (/^[A-Z][a-zA-Z0-9]+$/.test(comp)) {
@@ -69,11 +69,11 @@ export function extractMantineImports(props: extractMantineImportsType) {
 
       // @mantine/dates
       if (props.dates) {
-        const extDatePackage =
-          /import\s*\{([\s\S]*?)\}\s*from\s*["']@mantine\/dates["']/g;
-        let matchExtDatePackage;
-        while ((matchExtDatePackage = extDatePackage.exec(content)) !== null) {
-          const imports = matchExtDatePackage[1];
+        const corePackage =
+          /import\s*\{([^}]*)\}\s*from\s*["']@mantine\/dates["']/;
+        let m;
+        if ((m = content.match(corePackage)) !== null) {
+          const imports = m[1];
           imports.split(",").forEach((item) => {
             const comp = item.trim().split(" as ")[0];
             if (/^[A-Z][a-zA-Z0-9]+$/.test(comp)) {
@@ -85,13 +85,11 @@ export function extractMantineImports(props: extractMantineImportsType) {
 
       // @mantine/charts
       if (props.charts) {
-        const extChartPackage =
-          /import\s*\{([\s\S]*?)\}\s*from\s*["']@mantine\/charts["']/g;
-        let matchExtChartPackage;
-        while (
-          (matchExtChartPackage = extChartPackage.exec(content)) !== null
-        ) {
-          const imports = matchExtChartPackage[1];
+        const corePackage =
+          /import\s*\{([^}]*)\}\s*from\s*["']@mantine\/charts["']/;
+        let m;
+        if ((m = content.match(corePackage)) !== null) {
+          const imports = m[1];
           imports.split(",").forEach((item) => {
             const comp = item.trim().split(" as ")[0];
             if (/^[A-Z][a-zA-Z0-9]+$/.test(comp)) {
