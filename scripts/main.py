@@ -76,7 +76,7 @@ if __name__ == "__main__":
 
     # Mantine Ext CodeHighlight
     dir = os.path.join(mantine_root, "code-highlight")
-    components = flat(
+    components = flat_tree(
         dir, "@mantine/code-highlight", "@mantine/code-highlight/styles.css", non_core
     )
     full_components.extend(components)
