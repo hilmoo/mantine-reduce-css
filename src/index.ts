@@ -55,6 +55,9 @@ cli
   .option("--tiptap", "Include @mantine/tiptap CSS in the output file", {
     default: false,
   })
+  .option("--modals", "Include Mantine modals manager CSS in the output file", {
+    default: false,
+  })
   .option("--ext <extension>", "File extension to scan for Mantine imports", {
     default: ["tsx", "jsx"],
   })
@@ -71,6 +74,7 @@ cli
       charts: options.charts,
       core: options.core,
       tiptap: options.tiptap,
+      modals: options.modals,
       extensions: options.ext,
     });
 

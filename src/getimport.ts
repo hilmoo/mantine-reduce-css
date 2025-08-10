@@ -13,6 +13,7 @@ export type extractMantineImportsType = {
   charts: boolean;
   core: boolean;
   tiptap: boolean;
+  modals: boolean;
   extensions: string[];
 };
 export function extractMantineImports(props: extractMantineImportsType) {
@@ -38,6 +39,9 @@ export function extractMantineImports(props: extractMantineImportsType) {
   }
   if (props.tiptap) {
     allResults.add("@mantine/tiptap");
+  }
+  if (props.modals) {
+    allResults.add("modal");
   }
 
   function processDirectory(dir: string, allResults: Set<string>) {
