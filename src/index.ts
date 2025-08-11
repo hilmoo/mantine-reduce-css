@@ -52,10 +52,10 @@ cli
   .option("--nprogress", "Include @mantine/nprogress CSS in the output file", {
     default: false,
   })
-  .option("--tiptap", "Include @mantine/tiptap CSS in the output file", {
+  .option("--modals", "Include Mantine modals manager CSS in the output file", {
     default: false,
   })
-  .option("--modals", "Include Mantine modals manager CSS in the output file", {
+  .option("--tiptap", "Include @mantine/tiptap CSS in the output file", {
     default: false,
   })
   .option("--ext <extension>", "File extension to scan for Mantine imports", {

@@ -37,11 +37,11 @@ export function extractMantineImports(props: extractMantineImportsType) {
   if (props.nprogress) {
     allResults.add("@mantine/nprogress");
   }
+  if (props.modals) {
+    allResults.add("@mantine/modals");
+  }
   if (props.tiptap) {
     allResults.add("@mantine/tiptap");
-  }
-  if (props.modals) {
-    allResults.add("modal");
   }
 
   function processDirectory(dir: string, allResults: Set<string>) {

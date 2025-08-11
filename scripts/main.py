@@ -69,11 +69,6 @@ if __name__ == "__main__":
     components = tree(dir, "@mantine/charts", "@mantine/charts/styles.css", non_core)
     full_components.extend(components)
 
-    # Mantine Ext Tiptap
-    dir = os.path.join(mantine_root, "tiptap", "src")
-    components = flat_tree(dir, "@mantine/tiptap", "@mantine/tiptap/styles.css", non_core)
-    full_components.extend(components)
-
     # Mantine Ext CodeHighlight
     dir = os.path.join(mantine_root, "code-highlight")
     components = flat_tree(
@@ -113,6 +108,20 @@ if __name__ == "__main__":
     dir = os.path.join(mantine_root, "nprogress")
     components = flat(
         dir, "@mantine/nprogress", "@mantine/nprogress/styles.css", non_core
+    )
+    full_components.extend(components)
+
+    # Mantine Ext ModalsManager
+    dir = os.path.join(mantine_root, "modals")
+    components = flat(
+        dir, "@mantine/modals", "", non_core
+    )
+    full_components.extend(components)
+
+    # Mantine Ext Tiptap
+    dir = os.path.join(mantine_root, "tiptap", "src")
+    components = flat_tree(
+        dir, "@mantine/tiptap", "@mantine/tiptap/styles.css", non_core
     )
     full_components.extend(components)
 
