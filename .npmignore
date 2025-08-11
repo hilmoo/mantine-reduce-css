@@ -5,4 +5,4 @@ tsconfig.*
 .gitsubmodules
 src/
 .github/
-.gitsubmodules
+.gitmodules
