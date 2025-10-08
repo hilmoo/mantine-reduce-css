@@ -4,8 +4,8 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/Accordion.css",
     "dependency": [
-      "Collapse",
-      "UnstyledButton"
+      "UnstyledButton",
+      "Collapse"
     ]
   },
   {
@@ -13,9 +13,9 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/ActionIcon.css",
     "dependency": [
+      "UnstyledButton",
       "Loader",
-      "Transition",
-      "UnstyledButton"
+      "Transition"
     ]
   },
   {
@@ -65,8 +65,8 @@
     "module": "@mantine/core",
     "css_name": "",
     "dependency": [
-      "InputBase",
       "ScrollArea",
+      "InputBase",
       "Combobox",
       "Input"
     ]
@@ -114,9 +114,9 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/Button.css",
     "dependency": [
+      "UnstyledButton",
       "Loader",
-      "Transition",
-      "UnstyledButton"
+      "Transition"
     ]
   },
   {
@@ -138,8 +138,8 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/Checkbox.css",
     "dependency": [
-      "Input",
-      "UnstyledButton"
+      "UnstyledButton",
+      "Input"
     ]
   },
   {
@@ -175,12 +175,12 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/ColorInput.css",
     "dependency": [
-      "ColorPicker",
       "InputBase",
-      "ActionIcon",
       "Input",
       "ColorSwatch",
-      "Popover"
+      "ColorPicker",
+      "Popover",
+      "ActionIcon"
     ]
   },
   {
@@ -188,8 +188,8 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/ColorPicker.css",
     "dependency": [
-      "Checkbox",
-      "ColorSwatch"
+      "ColorSwatch",
+      "Checkbox"
     ]
   },
   {
@@ -203,9 +203,9 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/Combobox.css",
     "dependency": [
-      "Popover",
       "Checkbox",
-      "Input"
+      "Input",
+      "Popover"
     ]
   },
   {
@@ -225,10 +225,10 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/Dialog.css",
     "dependency": [
-      "Paper",
-      "Affix",
+      "CloseButton",
       "Transition",
-      "CloseButton"
+      "Affix",
+      "Paper"
     ]
   },
   {
@@ -262,8 +262,8 @@
     "module": "@mantine/core",
     "css_name": "",
     "dependency": [
-      "Input",
       "CloseButton",
+      "Input",
       "FileButton"
     ]
   },
@@ -304,8 +304,8 @@
     "module": "@mantine/core",
     "css_name": "",
     "dependency": [
-      "Text",
-      "Mark"
+      "Mark",
+      "Text"
     ]
   },
   {
@@ -349,8 +349,8 @@
     "module": "@mantine/core",
     "css_name": "",
     "dependency": [
-      "InputBase",
       "Textarea",
+      "InputBase",
       "Input"
     ]
   },
@@ -393,10 +393,10 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/Menu.css",
     "dependency": [
-      "Transition",
+      "UnstyledButton",
       "Accordion",
-      "Popover",
-      "UnstyledButton"
+      "Transition",
+      "Popover"
     ]
   },
   {
@@ -421,12 +421,12 @@
     "module": "@mantine/core",
     "css_name": "",
     "dependency": [
-      "Pill",
-      "PillsInput",
       "InputBase",
-      "ScrollArea",
       "Input",
-      "Combobox"
+      "ScrollArea",
+      "PillsInput",
+      "Combobox",
+      "Pill"
     ]
   },
   {
@@ -444,9 +444,9 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/NavLink.css",
     "dependency": [
+      "UnstyledButton",
       "Accordion",
-      "Collapse",
-      "UnstyledButton"
+      "Collapse"
     ]
   },
   {
@@ -469,9 +469,9 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/NumberInput.css",
     "dependency": [
+      "UnstyledButton",
       "InputBase",
-      "Input",
-      "UnstyledButton"
+      "Input"
     ]
   },
   {
@@ -499,8 +499,8 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/PasswordInput.css",
     "dependency": [
-      "InputBase",
       "ActionIcon",
+      "InputBase",
       "Input"
     ]
   },
@@ -536,8 +536,8 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/Popover.css",
     "dependency": [
-      "FocusTrap",
       "Overlay",
+      "FocusTrap",
       "Portal",
       "Transition"
     ]
@@ -559,8 +559,8 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/Radio.css",
     "dependency": [
-      "Input",
-      "UnstyledButton"
+      "UnstyledButton",
+      "Input"
     ]
   },
   {
@@ -596,8 +596,8 @@
     "module": "@mantine/core",
     "css_name": "",
     "dependency": [
-      "InputBase",
       "ScrollArea",
+      "InputBase",
       "Combobox",
       "Input"
     ]
@@ -645,9 +645,9 @@
     "module": "@mantine/core",
     "css_name": "@mantine/core/styles/Stepper.css",
     "dependency": [
+      "Checkbox",
       "Loader",
       "Transition",
-      "Checkbox",
       "UnstyledButton"
     ]
   },
@@ -686,12 +686,12 @@
     "module": "@mantine/core",
     "css_name": "",
     "dependency": [
-      "Pill",
-      "PillsInput",
       "InputBase",
-      "ScrollArea",
       "Input",
-      "Combobox"
+      "ScrollArea",
+      "PillsInput",
+      "Combobox",
+      "Pill"
     ]
   },
   {
@@ -947,11 +947,11 @@
     "module": "@mantine/dates",
     "css_name": "@mantine/dates/styles.css",
     "dependency": [
-      "SimpleGrid",
       "CloseButton",
       "InputBase",
-      "ScrollArea",
-      "Popover"
+      "Popover",
+      "SimpleGrid",
+      "ScrollArea"
     ]
   },
   {
@@ -1086,9 +1086,9 @@
     "module": "@mantine/charts",
     "css_name": "@mantine/charts/styles.css",
     "dependency": [
+      "ColorSwatch",
       "Group",
-      "Paper",
-      "ColorSwatch"
+      "Paper"
     ]
   },
   {
@@ -1108,8 +1108,8 @@
     "module": "@mantine/code-highlight",
     "css_name": "@mantine/code-highlight/styles.css",
     "dependency": [
-      "ScrollArea",
-      "UnstyledButton"
+      "UnstyledButton",
+      "ScrollArea"
     ]
   },
   {
@@ -1125,11 +1125,11 @@
     "module": "@mantine/spotlight",
     "css_name": "@mantine/spotlight/styles.css",
     "dependency": [
-      "ScrollArea",
-      "UnstyledButton",
       "Highlight",
       "Input",
-      "Modal"
+      "UnstyledButton",
+      "Modal",
+      "ScrollArea"
     ]
   },
   {
@@ -1162,8 +1162,8 @@
     "css_name": "",
     "dependency": [
       "Group",
-      "Modal",
-      "Button"
+      "Button",
+      "Modal"
     ]
   },
   {
@@ -1171,8 +1171,8 @@
     "module": "@mantine/tiptap",
     "css_name": "@mantine/tiptap/styles.css",
     "dependency": [
-      "Typography",
-      "UnstyledButton"
+      "UnstyledButton",
+      "Typography"
     ]
   }
 ]
