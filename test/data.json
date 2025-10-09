@@ -1,7 +1,0 @@
-[
-	{
-		"name": "Accordion",
-		"css_name": "@tess/core/styles/Accordion.css",
-		"dependency": ["UnstyledButton", "Collapse"]
-	}
-]

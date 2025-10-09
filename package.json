@@ -10,10 +10,7 @@
 		"build": "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.js",
 		"start": "tsx src/index.ts",
 		"fix": "biome check --fix",
-		"fmt": "biome format",
-		"test": "vitest",
-		"test:fixture": "tsx src/index.ts gen --config test/package.json",
-		"test:vite-min-template": "tsx src/index.ts gen --config test/fixture/vite-min-template/package.json"
+		"test": "vitest"
 	},
 	"repository": {
 		"type": "git",
@@ -27,8 +24,7 @@
 	"dependencies": {
 		"cac": "^6.7.14",
 		"es-module-lexer": "^1.7.0",
-		"fast-glob": "^3.3.3",
-		"pkg-types": "^2.3.0"
+		"fast-glob": "^3.3.3"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.2.5",

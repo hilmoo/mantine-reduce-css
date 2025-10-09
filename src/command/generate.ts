@@ -9,19 +9,19 @@ import {
 	getDependencyComponents,
 	sortComponents,
 } from "../lib/component";
-import type { Config } from "../lib/config";
+import type { GenerateConfig } from "../lib/config";
 import { getCssForComponents } from "../lib/css";
 import type { Component, ComponentData } from "../types";
 
 interface GenerateOptions {
 	packageJsonPath: string;
-	config: Config;
+	config: GenerateConfig;
 }
 
-export async function generate(options: GenerateOptions) {
+export async function GenerateCmd(options: GenerateOptions) {
 	let css = "";
 	const mantineComponentMap = new Map(
-		componentData.map((c) => [{ name: c.name, module: c.module }, c]),
+		componentData.map((c) => [`${c.module}/${c.name}`, c]),
 	);
 	const componentMap = getComponentData({
 		componentMap: mantineComponentMap,
@@ -55,7 +55,7 @@ export async function generate(options: GenerateOptions) {
 	try {
 		await fs.promises.access(outputDir, fs.constants.F_OK);
 		await fs.promises.writeFile(outputPath, css, "utf-8");
-		console.log(
+		console.info(
 			`Generated CSS with ${allComponents.size} components to ${outputPath}`,
 		);
 	} catch {
@@ -66,10 +66,12 @@ export async function generate(options: GenerateOptions) {
 /**
  * Scans project files and generates a set of all imported components from the target package
  */
-async function getAllComponents(packageJsonPath: string, config: Config) {
+async function getAllComponents(
+	packageJsonPath: string,
+	config: GenerateConfig,
+) {
 	const projectRoot = path.dirname(packageJsonPath);
 	const files = await fg(config.target, { cwd: projectRoot });
-	console.log(`Scanning ${files.length} files...`);
 	const allComponents = new Set<Component>();
 	const pkgInclude = new Set<string>(MANTINE_PACKAGE);
 
@@ -93,8 +95,8 @@ async function getAllComponents(packageJsonPath: string, config: Config) {
 
 interface getAllDepComponentsProps {
 	components: Set<Component>;
-	config: Config;
-	componentMap: Map<Component, ComponentData>;
+	config: GenerateConfig;
+	componentMap: Map<string, ComponentData>;
 }
 function getAllDepComponents({
 	components,

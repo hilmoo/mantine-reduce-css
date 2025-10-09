@@ -1,27 +1,11 @@
 import { readFileSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { init, parse } from "es-module-lexer";
+import { MANTINE_PACKAGE } from "../constant";
 import hierarchy from "../hierarchy.json";
 import type { Component, ComponentData } from "../types";
 import type { ExtendConfig } from "./config";
-
-/**
- * Extracts component names from a named import statement
- * Example: "{ Button, Text as CustomText }" -> ["Button", "Text"]
- */
-function extractComponentNames(importStatement: string): string[] {
-	const namedImportMatch = importStatement.match(/\{(.*?)\}/s);
-
-	if (!namedImportMatch?.[1]) {
-		return [];
-	}
-
-	return namedImportMatch[1]
-		.split(",")
-		.map((specifier) => specifier.trim())
-		.filter(Boolean)
-		.map((specifier) => specifier.split(" as ")[0].trim());
-}
+import { ExtractFunctionNames } from "./function";
 
 /**
  * Analyzes a file's imports and extracts components from the target package
@@ -41,7 +25,7 @@ export async function extractImportsFromFile(
 			if (imp.n && targetPackage.has(imp.n)) {
 				const moduleName = imp.n;
 				const statement = content.substring(imp.ss, imp.se);
-				const componentNames = extractComponentNames(statement);
+				const componentNames = ExtractFunctionNames(statement);
 				componentNames.forEach((name) => {
 					components.add({ name, module: moduleName });
 				});
@@ -55,22 +39,19 @@ export async function extractImportsFromFile(
 }
 
 interface getAllDepComponentsProps {
-	componentMap: Map<Component, ComponentData>;
+	componentMap: Map<string, ComponentData>;
 	extendConfig: ExtendConfig[];
 }
 export function getComponentData(
 	props: getAllDepComponentsProps,
-): Map<Component, ComponentData> {
+): Map<string, ComponentData> {
 	for (const ext of props.extendConfig) {
 		try {
 			const dataExt = readFileSync(ext.data, "utf-8");
 			const extComponents = JSON.parse(dataExt);
 			for (const comp of extComponents) {
 				if (comp.name && comp.module) {
-					props.componentMap.set(
-						{ name: comp.name, module: comp.module },
-						comp,
-					);
+					props.componentMap.set(`${comp.module}/${comp.name}`, comp);
 				}
 			}
 		} catch (error) {
@@ -86,19 +67,42 @@ export function getComponentData(
 
 export function getDependencyComponents(
 	components: Set<Component>,
-	componentMap: Map<Component, ComponentData>,
+	componentMap: Map<string, ComponentData>,
 ) {
 	const dependencies = new Set<Component>();
 
-	for (const componentName of components) {
-		const data = componentMap.get({
-			name: componentName.name,
-			module: componentName.module,
-		});
+	function addDependencies(module: string, name: string, addSelf = false) {
+		const data = componentMap.get(`${module}/${name}`);
+		if (!data?.dependency) return;
 
-		if (data?.dependency) {
-			for (const dep of data.dependency) {
-				dependencies.add({ name: dep, module: componentName.module });
+		for (const dep of data.dependency) {
+			dependencies.add({
+				name: addSelf ? dep : dep,
+				module: addSelf ? module : module,
+			});
+		}
+	}
+
+	function processDependency(dep: string) {
+		const lastSlashIndex = dep.lastIndexOf("/");
+		return {
+			module: dep.substring(0, lastSlashIndex),
+			name: dep.substring(lastSlashIndex + 1),
+		};
+	}
+
+	for (const { module, name } of components) {
+		if (MANTINE_PACKAGE.has(module)) {
+			addDependencies(module, name, true);
+		} else {
+			const data = componentMap.get(`${module}/${name}`);
+			if (data?.dependency) {
+				for (const dep of data.dependency) {
+					const { module: depModule, name: depName } = processDependency(dep);
+					if (MANTINE_PACKAGE.has(depModule)) {
+						addDependencies(depModule, depName, true);
+					}
+				}
 			}
 		}
 	}

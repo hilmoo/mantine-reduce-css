@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { PackageJson } from "pkg-types";
 
 interface ExtensionsConfig {
 	CodeHighlight: boolean;
@@ -18,7 +17,7 @@ export interface ExtendConfig {
 	data: string;
 }
 
-export interface Config {
+export interface GenerateConfig {
 	target: string[];
 	globalCss: boolean;
 	outputPath: string;
@@ -39,12 +38,14 @@ const defaultExtensions: ExtensionsConfig = {
 
 interface parseConfigProps {
 	configPath: string;
-	configData: PackageJson;
+	configData: {
+		[key: string]: unknown;
+	};
 }
-export function parseConfig({
+export function parseGenerateConfig({
 	configPath,
 	configData,
-}: parseConfigProps): Config {
+}: parseConfigProps): GenerateConfig {
 	const mantineReduceCss = configData.mantineReduceCss;
 	if (!mantineReduceCss) {
 		throw new Error("Missing 'mantineReduceCss' configuration in package.json");
@@ -56,7 +57,7 @@ export function parseConfig({
 		globalCss = true,
 		extensions = {},
 		extend,
-	} = mantineReduceCss as Partial<Config> & {
+	} = mantineReduceCss as Partial<GenerateConfig> & {
 		extensions?: Partial<ExtensionsConfig>;
 		extend?: ExtendConfig;
 	};
@@ -101,5 +102,50 @@ export function parseConfig({
 		globalCss,
 		extensions: mergedExtensions,
 		extend: extendArr,
+	};
+}
+
+export interface ExportConfig {
+	packageName: string;
+	target: string[];
+	outputPath: string;
+}
+interface parseExportConfigProps {
+	configData: {
+		[key: string]: unknown;
+	};
+}
+export function ParseExportConfig({
+	configData,
+}: parseExportConfigProps): ExportConfig {
+	const mantineReduceCss = configData.mantineReduceCss;
+	if (!mantineReduceCss) {
+		throw new Error("Missing 'mantineReduceCss' configuration in package.json");
+	}
+
+	const { target, packageName, outputPath } =
+		mantineReduceCss as Partial<ExportConfig>;
+	if (!target || !Array.isArray(target) || target.length === 0) {
+		throw new Error(
+			"'target' must be a non-empty array in 'mantineReduceCss' configuration",
+		);
+	}
+
+	if (!packageName || typeof packageName !== "string") {
+		throw new Error(
+			"'packageName' must be a string in 'mantineReduceCss' configuration",
+		);
+	}
+
+	if (!outputPath || typeof outputPath !== "string") {
+		throw new Error(
+			"'outputPath' must be a string in 'mantineReduceCss' configuration",
+		);
+	}
+
+	return {
+		packageName,
+		target,
+		outputPath,
 	};
 }
