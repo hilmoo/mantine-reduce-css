@@ -1,31 +1,47 @@
 {
-  "name": "mantine-reduce-css",
-  "type": "module",
-  "version": "1.1.2",
-  "description": "cli tool for reducing global css for mantine",
-  "bin": {
-    "mantine-reduce-css": "./dist/index.js"
-  },
-  "scripts": {
-    "build": "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.js",
-    "start": "tsx src/index.ts example --out main.css"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hilmoo/mantine-reduce-css.git"
-  },
-  "keywords": [
-    "mantine"
-  ],
-  "author": "hilmoo",
-  "license": "MIT",
-  "dependencies": {
-    "cac": "^6.7.14"
-  },
-  "devDependencies": {
-    "@types/node": "^24.0.12",
-    "esbuild": "^0.25.6",
-    "tsx": "^4.20.3",
-    "typescript": "^5.8.3"
-  }
+	"name": "mantine-reduce-css",
+	"type": "module",
+	"version": "2.3.0",
+	"description": "cli tool for reducing global css for mantine",
+	"main": "dist/index.js",
+	"bin": {
+		"mantine-reduce-css": "dist/index.js"
+	},
+	"files": [
+		"dist/**/*.js"
+	],
+	"scripts": {
+		"build": "rollup -c",
+		"start": "tsx src/index.ts",
+		"fix": "biome check --fix",
+		"test": "vitest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hilmoo/mantine-reduce-css.git"
+	},
+	"keywords": [
+		"mantine"
+	],
+	"author": "hilmoo",
+	"license": "MIT",
+	"dependencies": {
+		"cac": "^6.7.14",
+		"es-module-lexer": "^1.7.0",
+		"fast-glob": "^3.3.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.5",
+		"@rollup/plugin-commonjs": "^28.0.6",
+		"@rollup/plugin-json": "^6.1.0",
+		"@rollup/plugin-node-resolve": "^16.0.2",
+		"@rollup/plugin-typescript": "^12.1.4",
+		"@types/node": "^24.0.12",
+		"esbuild": "^0.25.6",
+		"rollup": "^4.52.4",
+		"tslib": "^2.8.1",
+		"tsx": "^4.20.3",
+		"typescript": "^5.9.3",
+		"vitest": "^3.2.4"
+	}
 }

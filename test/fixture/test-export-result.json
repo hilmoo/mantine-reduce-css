@@ -1,0 +1,1 @@
+[{"name":"CustomButton","module":"@test","dependency":["@mantine/core/Stack","@mantine/core/Switch","@mantine/core/TagsInput","@mantine/core/TextInput","@mantine/dates/TimePicker"]}]

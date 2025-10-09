@@ -14,8 +14,7 @@ def list_mantine_component(
     with open(os.path.join(parent_dir, "scripts", "all.json"), "r") as f:
         data = json.load(f)
         for item in data:
-            if "component" in item:
-                css_file.add(item["component"])
+            css_file.add(item)
 
     for entry in os.listdir(abs_base_dir):
         full_path = os.path.join(abs_base_dir, entry)

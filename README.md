@@ -1,45 +1,106 @@
 # mantine-reduce-css
 
-A CLI tool to generate a reduced CSS bundle for your Mantine-based project by scanning your codebase for Mantine imports.
+A CLI tool for generating reduced Mantine CSS bundles based on your project’s component usage.
 
-> [!NOTE]
-> This package supports Mantine v8.1.0 and above (it probably works with earlier versions, but is not tested).
-> The current mantine version is `8.1.3`.
+## Installation
+
+```sh
+npm install -g mantine-reduce-css
+```
+
+## Mantine Version
+
+Since version 2, this package follows Mantine's minor version updates.
+Example: `mantine-reduce-css@2.3.x` is compatible with `@mantine/core@8.3.x`.
 
 ## Usage
 
-```sh
-$ npx mantine-reduce-css run [options]
-```
-
-- `--help`: Show help information
-
-## Examples
-
-Scan the `./src` directory and output to `mantine.css`:
+### Generate Reduced CSS
 
 ```sh
-mantine-reduce-css run
+mantine-reduce-css --config <path-to-config>
 ```
 
-Scan a specific directory and output to a custom file:
+### Export Component Data
+
+To export component data for custom packages, use:
 
 ```sh
-mantine-reduce-css run --in ./app --out custom-mantine.css
+mantine-reduce-css gen --config <path-to-config>
 ```
 
-Only inclue `@mantine/dates` and `@mantine/notifications`:
+## Configuration
+
+Add a `mantineReduceCss` section to your config file (e.g., `package.json` or a separate JSON file):
+
+```json
+{
+  "mantineReduceCss": {
+    "target": [
+      "src/**/*.tsx"
+    ],
+    "globalCss": true,
+    "extensions": {
+      "CodeHighlight": false,
+      "NotificationsSystem": false,
+      "Spotlight": false,
+      "Carousel": false,
+      "Dropzone": false,
+      "NavigationProgress": false,
+      "ModalsManager": false,
+      "RichTextEditor": false
+    },
+    "outputPath": "mantine.css",
+    "extend": [
+      {
+        "package": "@custom",
+        "data": "custom-components.json"
+      }
+    ]
+  }
+}
+```
+
+### Options
+
+- **target**: Array of glob patterns for files to scan for Mantine imports (required)
+- **globalCss**: Include Mantine global CSS (default: true)
+- **extensions**: Enable Mantine extension packages (all default to false)
+- **outputPath**: Path to write the generated CSS file (required)
+- **extend**: Array of objects to extend with custom component data (optional)
+  - **package**: Name of the custom package
+  - **data**: Path to a JSON file containing exported component data
+
+### Export Config
+
+For exporting component data, use:
+
+```json
+{
+  "mantineReduceCss": {
+    "target": [
+      "src/components/**/*.tsx"
+    ],
+    "outputPath": "exported-components.json",
+    "packageName": "@custom"
+  }
+}
+```
+
+## Example
+
+To generate CSS for your project:
 
 ```sh
-mantine-reduce-css run --notification --dates --core false --base false
+mantine-reduce-css --config test/test-simple.json
 ```
 
-For more info, run:
+To export component data:
 
 ```sh
-mantine-reduce-css run --help
+mantine-reduce-css gen --config test/test-export.json
 ```
 
-# License
+## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+MIT
