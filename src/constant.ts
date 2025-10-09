@@ -3,8 +3,3 @@ export const MANTINE_PACKAGE = new Set([
 	"@mantine/charts",
 	"@mantine/dates",
 ]);
-
-export const loaderMap = {
-	".jsx": "jsx",
-	".tsx": "tsx",
-};
