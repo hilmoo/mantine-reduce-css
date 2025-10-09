@@ -1,11 +1,17 @@
+import fs from "node:fs";
 import path from "node:path";
-import { init, parse } from "es-module-lexer";
 import fg from "fast-glob";
-import { MANTINE_PACKAGE } from "../constant/mantine";
-import { Config } from "../lib/config";
-import { extractImportsFromFile, getDependencyComponents, sortComponents } from "../lib/component";
+import { MANTINE_PACKAGE } from "../constant";
+import componentData from "../data.json";
+import {
+    extractImportsFromFile,
+    getComponentData,
+    getDependencyComponents,
+    sortComponents,
+} from "../lib/component";
+import type { Config } from "../lib/config";
 import { getCssForComponents } from "../lib/css";
-import fs from "fs";
+import type { Component, ComponentData } from "../types";
 
 export interface GenerateOptions {
     packageJsonPath: string;
@@ -14,25 +20,45 @@ export interface GenerateOptions {
 
 export async function generate(options: GenerateOptions) {
     let css = "";
+    const mantineComponentMap = new Map(
+        componentData.map((c) => [{ name: c.name, module: c.module }, c]),
+    );
+    const componentMap = getComponentData({
+        componentMap: mantineComponentMap,
+        extendConfig: options.config.extend,
+    });
 
-    const components = await getAllComponents(options.packageJsonPath, options.config);
-    const depComponents = getAllDepComponents(components, options.config);
-    const allComponents = new Set<string>([...depComponents, ...components]);
+    const components = await getAllComponents(
+        options.packageJsonPath,
+        options.config,
+    );
+    const depComponents = getAllDepComponents({
+        components,
+        config: options.config,
+        componentMap,
+    });
+    const allComponents = new Set<Component>([...depComponents, ...components]);
     const sortedComponents = sortComponents(allComponents);
 
     if (options.config.globalCss) {
-        css += "@import \"@mantine/core/styles/baseline.css\";\n@import \"@mantine/core/styles/default-css-variables.css\";\n@import \"@mantine/core/styles/global.css\";\n"
+        css +=
+            '@import "@mantine/core/styles/baseline.css";\n@import "@mantine/core/styles/default-css-variables.css";\n@import "@mantine/core/styles/global.css";\n';
     }
     css += getCssForComponents(sortedComponents);
 
-    const outputPath = path.resolve(path.dirname(options.packageJsonPath), options.config.outputPath);
+    const outputPath = path.resolve(
+        path.dirname(options.packageJsonPath),
+        options.config.outputPath,
+    );
     const outputDir = path.dirname(outputPath);
 
     try {
         await fs.promises.access(outputDir, fs.constants.F_OK);
         await fs.promises.writeFile(outputPath, css, "utf-8");
-        console.log(`Generated CSS with ${allComponents.size} components to ${outputPath}`);
-    } catch (err) {
+        console.log(
+            `Generated CSS with ${allComponents.size} components to ${outputPath}`,
+        );
+    } catch {
         console.error(`Error: Output directory does not exist: ${outputDir}`);
     }
 }
@@ -40,51 +66,72 @@ export async function generate(options: GenerateOptions) {
 /**
  * Scans project files and generates a set of all imported components from the target package
  */
-async function getAllComponents(packageJsonPath: string, config: Config): Promise<Set<string>> {
-    await init;
-
+async function getAllComponents(packageJsonPath: string, config: Config) {
     const projectRoot = path.dirname(packageJsonPath);
     const files = await fg(config.target, { cwd: projectRoot });
-    const allComponents = new Set<string>();
+    const allComponents = new Set<Component>();
+    const pkgInclude = new Set<string>(MANTINE_PACKAGE);
+
+    if (config.extend) {
+        for (const ext of config.extend) {
+            pkgInclude.add(ext.package);
+        }
+    }
 
     for (const file of files) {
         const filePath = path.join(projectRoot, file);
-        const fileComponents = await extractImportsFromFile(
-            filePath,
-            MANTINE_PACKAGE,
-        );
+        const fileComponents = await extractImportsFromFile(filePath, pkgInclude);
 
-        fileComponents.forEach((component) => allComponents.add(component));
+        fileComponents.forEach((component) => {
+            allComponents.add(component);
+        });
     }
 
     return allComponents;
 }
 
-function getAllDepComponents(components: Set<string>, config: Config) {
+interface getAllDepComponentsProps {
+    components: Set<Component>;
+    config: Config;
+    componentMap: Map<Component, ComponentData>;
+}
+function getAllDepComponents({
+    components,
+    config,
+    componentMap,
+}: getAllDepComponentsProps) {
     if (config.extensions.CodeHighlight) {
-        components.add("@mantine/code-highlight");
+        const pkg = "@mantine/code-highlight";
+        components.add({ name: pkg, module: pkg });
     }
     if (config.extensions.NotificationsSystem) {
-        components.add("@mantine/notifications");
+        const pkg = "@mantine/notifications";
+        components.add({ name: pkg, module: pkg });
     }
     if (config.extensions.Spotlight) {
-        components.add("@mantine/spotlight");
+        const pkg = "@mantine/spotlight";
+        components.add({ name: pkg, module: pkg });
     }
     if (config.extensions.Carousel) {
-        components.add("@mantine/carousel");
+        const pkg = "@mantine/carousel";
+        components.add({ name: pkg, module: pkg });
     }
     if (config.extensions.Dropzone) {
-        components.add("@mantine/dropzone");
+        const pkg = "@mantine/dropzone";
+        components.add({ name: pkg, module: pkg });
     }
     if (config.extensions.NavigationProgress) {
-        components.add("@mantine/nprogress");
+        const pkg = "@mantine/nprogress";
+        components.add({ name: pkg, module: pkg });
     }
     if (config.extensions.ModalsManager) {
-        components.add("@mantine/modals");
+        const pkg = "@mantine/modals";
+        components.add({ name: pkg, module: pkg });
     }
     if (config.extensions.RichTextEditor) {
-        components.add("@mantine/tiptap");
+        const pkg = "@mantine/tiptap";
+        components.add({ name: pkg, module: pkg });
     }
 
-    return getDependencyComponents(components);
+    return getDependencyComponents(components, componentMap);
 }

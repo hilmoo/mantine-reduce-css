@@ -1,7 +1,8 @@
 {
 	"mantineReduceCss": {
 		"target": [
-			"fixture/**/*.tsx"
+			"fixture/**/*.tsx",
+			"!fixture/vite-min-template/**"
 		],
 		"globalCss": true,
 		"extensions": {
@@ -14,6 +15,12 @@
 			"ModalsManager": false,
 			"RichTextEditor": false
 		},
-		"outputPath": "main.css"
+		"outputPath": "main.css",
+		"extend": [
+			{
+				"package": "some-package",
+				"data": "data.json"
+			}
+		]
 	}
 }

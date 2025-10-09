@@ -4,3 +4,4 @@ dist/
 tmp/
 mantine.css
 mantine/
+.vscode/
