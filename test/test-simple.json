@@ -1,10 +1,9 @@
 {
 	"mantineReduceCss": {
 		"target": [
-			"fixture/**/*.tsx",
-			"!fixture/vite-min-template/**"
+			"fixture/simple/**"
 		],
-		"globalCss": true,
+		"globalCss": false,
 		"extensions": {
 			"CodeHighlight": false,
 			"NotificationsSystem": false,
@@ -15,12 +14,6 @@
 			"ModalsManager": false,
 			"RichTextEditor": false
 		},
-		"outputPath": "main.css",
-		"extend": [
-			{
-				"package": "some-package",
-				"data": "data.json"
-			}
-		]
+		"outputPath": "fixture/simple.css"
 	}
 }

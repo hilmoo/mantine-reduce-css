@@ -1,0 +1,19 @@
+{
+	"mantineReduceCss": {
+		"target": [
+			"fixture/folder/**/*.tsx"
+		],
+		"globalCss": true,
+		"extensions": {
+			"CodeHighlight": false,
+			"NotificationsSystem": false,
+			"Spotlight": false,
+			"Carousel": false,
+			"Dropzone": false,
+			"NavigationProgress": false,
+			"ModalsManager": false,
+			"RichTextEditor": false
+		},
+		"outputPath": "fixture/folder.css"
+	}
+}

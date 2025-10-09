@@ -1,6 +1,6 @@
+import fs from "node:fs";
 import { resolve } from "node:path";
 import { cac } from "cac";
-import { readPackageJSON } from "pkg-types";
 import { generate } from "./command/generate";
 import { parseConfig } from "./lib/config";
 
@@ -12,7 +12,8 @@ cli.option("--config <path>", "Path to config file", {
 
 cli.command("gen [options]", "Generate CSS file").action(async () => {
 	const configPath = resolve(process.cwd(), cli.options.config);
-	const configData = await readPackageJSON(configPath);
+	const configContents = await fs.promises.readFile(configPath, "utf-8");
+	const configData = await JSON.parse(configContents);
 	const config = parseConfig({ configPath, configData });
 	await generate({
 		packageJsonPath: configPath,
