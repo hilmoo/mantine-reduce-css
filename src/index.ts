@@ -11,7 +11,7 @@ cli.option("--config <path>", "Path to config file", {
 	default: "package.json",
 });
 
-cli.command("gen [options]", "Generate CSS file").action(async () => {
+cli.command("[options]", "Generate CSS file").action(async () => {
 	const configPath = resolve(process.cwd(), cli.options.config);
 	const configContents = await fs.promises.readFile(configPath, "utf-8");
 	const configData = await JSON.parse(configContents);
@@ -22,7 +22,7 @@ cli.command("gen [options]", "Generate CSS file").action(async () => {
 	});
 });
 
-cli.command("export [options]", "Export component data").action(async () => {
+cli.command("gen [options]", "Export component data").action(async () => {
 	const configPath = resolve(process.cwd(), cli.options.config);
 	const configContents = await fs.promises.readFile(configPath, "utf-8");
 	const configData = await JSON.parse(configContents);
@@ -32,5 +32,7 @@ cli.command("export [options]", "Export component data").action(async () => {
 		config: config,
 	});
 });
+
+cli.help();
 
 cli.parse();

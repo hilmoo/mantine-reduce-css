@@ -1,8 +1,0 @@
-scripts/
-mantine/
-tsconfig.*
-.gitignore
-.gitsubmodules
-src/
-.github/
-.gitmodules
