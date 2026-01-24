@@ -1,11 +1,11 @@
 import { readFileSync } from "node:fs";
 import { readFile } from "node:fs/promises";
-import { init, parse } from "es-module-lexer";
+import path from "node:path";
+import { parseSync } from "oxc-parser";
 import { MANTINE_PACKAGE } from "../constant";
 import hierarchy from "../hierarchy.json";
 import type { Component, ComponentData } from "../types";
 import type { ExtendConfig } from "./config";
-import { ExtractFunctionNames } from "./function";
 
 /**
  * Analyzes a file's imports and extracts components from the target package
@@ -14,25 +14,36 @@ export async function extractImportsFromFile(
 	filePath: string,
 	targetPackage: Set<string>,
 ): Promise<Set<Component>> {
-	await init;
 	const components = new Set<Component>();
 
 	try {
 		const content = await readFile(filePath, "utf-8");
-		const [imports] = parse(content);
+		const filename = path.basename(filePath);
 
-		for (const imp of imports) {
-			if (imp.n && targetPackage.has(imp.n)) {
-				const moduleName = imp.n;
-				const statement = content.substring(imp.ss, imp.se);
-				const componentNames = ExtractFunctionNames(statement);
-				componentNames.forEach((name) => {
-					components.add({ name, module: moduleName });
-				});
+		const result = parseSync(filename, content);
+
+		if (result.program?.body) {
+			for (const node of result.program.body) {
+				if (
+					node.type === "ImportDeclaration" &&
+					targetPackage.has(node.source.value)
+				) {
+					for (const specifier of node.specifiers) {
+						if (
+							specifier.type === "ImportSpecifier" ||
+							specifier.type === "ImportDefaultSpecifier"
+						) {
+							components.add({
+								name: specifier.local.name,
+								module: node.source.value,
+							});
+						}
+					}
+				}
 			}
 		}
 	} catch (error) {
-		console.error(`Could not process file: ${filePath}`, error);
+		console.warn(`Could not process file: ${filePath}`, error);
 	}
 
 	return components;

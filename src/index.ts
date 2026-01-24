@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import { resolve } from "node:path";
 import { cac } from "cac";
-import { version } from '../package.json';
+import { version } from "../package.json";
 import { ExportCmd } from "./command/export";
 import { GenerateCmd } from "./command/generate";
 import { ParseExportConfig, parseGenerateConfig } from "./lib/config";
