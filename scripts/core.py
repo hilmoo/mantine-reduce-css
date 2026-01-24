@@ -4,10 +4,9 @@ import json
 
 
 def list_mantine_component(
-    base_dir: str,
+    search_paths: list[str],
     parent_dir: str,
 ):
-    abs_base_dir = os.path.abspath(base_dir)
     components_dict = {}
     css_file = set()
 
@@ -16,45 +15,52 @@ def list_mantine_component(
         for item in data:
             css_file.add(item)
 
-    for entry in os.listdir(abs_base_dir):
-        full_path = os.path.join(abs_base_dir, entry)
-        if os.path.isdir(full_path):
-            component_name = os.path.basename(full_path)
-            tsx_path = os.path.join(full_path, f"{component_name}.tsx")
-            if not os.path.isfile(tsx_path):
-                continue
-            dependency = list(extract_dependency_import(tsx_path, 1))
+    for raw_path in search_paths:
+        abs_path = os.path.abspath(raw_path)
+        for entry in os.listdir(abs_path):
+            full_path = os.path.join(abs_path, entry)
+            if os.path.isdir(full_path):
+                component_name = os.path.basename(full_path)
+                tsx_path = os.path.join(full_path, f"{component_name}.tsx")
+                if component_name == "Slider":
+                    tsx_path = os.path.join(full_path, "Slider", "Slider.tsx")
+                if not os.path.isfile(tsx_path):
+                    continue
+                dependency = list(extract_dependency_import(tsx_path, 1))
 
-            css_name = ""
-            if component_name in css_file:
-                css_name = f"@mantine/core/styles/{component_name}.css"
+                if has_inline_input(tsx_path):
+                    dependency.append("InlineInput")
 
-            if component_name not in components_dict:
-                components_dict[component_name] = {
-                    "name": component_name,
-                    "module": "@mantine/core",
-                    "css_name": css_name,
-                    "dependency": set(dependency),
-                }
-            else:
-                components_dict[component_name]["dependency"].update(dependency)
+                css_name = ""
+                if component_name in css_file:
+                    css_name = f"@mantine/core/styles/{component_name}.css"
 
-            for subentry in os.listdir(full_path):
-                sub_path = os.path.join(full_path, subentry)
-                if os.path.isdir(sub_path):
-                    sub_tsx_path = os.path.join(sub_path, f"{subentry}.tsx")
-                    if os.path.isfile(sub_tsx_path):
-                        sub_dependency = list(
-                            extract_dependency_import(sub_tsx_path, 2)
-                        )
-                        components_dict[component_name]["dependency"].update(
-                            sub_dependency
-                        )
+                if component_name not in components_dict:
+                    components_dict[component_name] = {
+                        "name": component_name,
+                        "module": "@mantine/core",
+                        "css_name": css_name,
+                        "dependency": set(dependency),
+                    }
+                else:
+                    components_dict[component_name]["dependency"].update(dependency)
 
-    components = []
-    for comp in components_dict.values():
-        comp["dependency"] = list(comp["dependency"])
-        components.append(comp)
+                for subentry in os.listdir(full_path):
+                    sub_path = os.path.join(full_path, subentry)
+                    if os.path.isdir(sub_path):
+                        sub_tsx_path = os.path.join(sub_path, f"{subentry}.tsx")
+                        if os.path.isfile(sub_tsx_path):
+                            sub_dependency = list(
+                                extract_dependency_import(sub_tsx_path, 2)
+                            )
+                            components_dict[component_name]["dependency"].update(
+                                sub_dependency
+                            )
+
+        components = []
+        for comp in components_dict.values():
+            comp["dependency"] = list(comp["dependency"])
+            components.append(comp)
 
     return components
 
@@ -78,3 +84,9 @@ def extract_dependency_import(file_path: str, depth: int) -> list[str]:
         return []
     matches = pattern.findall(content)
     return matches
+
+
+def has_inline_input(file_path: str) -> bool:
+    with open(file_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    return "from '../../utils/InlineInput';" in content

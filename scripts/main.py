@@ -54,7 +54,15 @@ if __name__ == "__main__":
 
     # Mantine Core Component
     dir = os.path.join(mantine_root, "core", "src", "components")
-    components = list_mantine_component(dir, parent_dir)
+    components = list_mantine_component(
+        [
+            dir,
+            os.path.join(dir, "Radio"),
+            os.path.join(dir, "Checkbox"),
+            os.path.join(mantine_root, "core", "src", "utils"),
+        ],
+        parent_dir,
+    )
     full_components.extend(components)
 
     non_core = set(comp["name"] for comp in components)
@@ -113,9 +121,7 @@ if __name__ == "__main__":
 
     # Mantine Ext ModalsManager
     dir = os.path.join(mantine_root, "modals")
-    components = flat(
-        dir, "@mantine/modals", "", non_core
-    )
+    components = flat(dir, "@mantine/modals", "", non_core)
     full_components.extend(components)
 
     # Mantine Ext Tiptap
