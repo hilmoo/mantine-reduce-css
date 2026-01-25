@@ -48,7 +48,7 @@ export async function GenerateCmd(options: GenerateOptions) {
 
 	const outputPath = path.resolve(
 		path.dirname(options.packageJsonPath),
-		options.config.outputPath,
+		options.config.outputPath!,
 	);
 	const outputDir = path.dirname(outputPath);
 
@@ -71,7 +71,7 @@ async function getAllComponents(
 	config: GenerateConfig,
 ) {
 	const projectRoot = path.dirname(packageJsonPath);
-	const files = await fg(config.target, { cwd: projectRoot });
+	const files = await fg(config.target!, { cwd: projectRoot });
 	const allComponents = new Set<Component>();
 	const pkgInclude = new Set<string>(MANTINE_PACKAGE);
 

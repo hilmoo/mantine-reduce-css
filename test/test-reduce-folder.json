@@ -1,7 +1,7 @@
 {
 	"mantineReduceCss": {
 		"target": [
-			"fixture/folder/**/*.tsx"
+			"fixture/reduce-folder/**/*.tsx"
 		],
 		"globalCss": true,
 		"extensions": {
@@ -14,6 +14,6 @@
 			"ModalsManager": false,
 			"RichTextEditor": false
 		},
-		"outputPath": "fixture/folder.css"
+		"outputPath": "fixture/reduce-folder.css"
 	}
 }

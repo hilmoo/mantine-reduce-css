@@ -1,0 +1,25 @@
+{
+    "mantineReduceCss": {
+        "target": [
+            "fixture/extend-simple/**/*.tsx"
+        ],
+        "globalCss": false,
+        "extensions": {
+            "CodeHighlight": false,
+            "NotificationsSystem": false,
+            "Spotlight": false,
+            "Carousel": false,
+            "Dropzone": false,
+            "NavigationProgress": false,
+            "ModalsManager": false,
+            "RichTextEditor": false
+        },
+        "outputPath": "fixture/extend-simple.css",
+        "extend": [
+            {
+                "package": "@test",
+                "data": "fixture/test-gen-result.json"
+            }
+        ]
+    }
+}
