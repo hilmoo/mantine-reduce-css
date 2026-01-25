@@ -1,7 +1,7 @@
 {
 	"mantineReduceCss": {
 		"target": [
-			"fixture/simple/**"
+			"fixture/reduce/**"
 		],
 		"globalCss": false,
 		"extensions": {
@@ -14,6 +14,6 @@
 			"ModalsManager": false,
 			"RichTextEditor": false
 		},
-		"outputPath": "fixture/simple.css"
+		"outputPath": "fixture/reduce.css"
 	}
 }

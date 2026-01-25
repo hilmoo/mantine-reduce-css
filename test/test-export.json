@@ -1,9 +1,0 @@
-{
-    "mantineReduceCss": {
-        "target": [
-            "fixture/export/**/*.tsx"
-        ],
-        "outputPath": "fixture/test-export-result.json",
-        "packageName": "@test"
-    }
-}

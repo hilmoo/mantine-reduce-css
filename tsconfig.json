@@ -4,7 +4,7 @@
 		"module": "ESNext",
 		"moduleResolution": "bundler",
 		"outDir": "dist",
-		"rootDir": "src",
+		"rootDir": ".",
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
 		"forceConsistentCasingInFileNames": true,
@@ -16,7 +16,7 @@
 	},
 	"exclude": [
 		"mantine/**",
-		"test/**",
+		"test/fixture/**",
 		"vitest.config.ts"
 	]
 }

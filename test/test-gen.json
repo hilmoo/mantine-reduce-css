@@ -1,0 +1,16 @@
+{
+    "mantineReduceCss": {
+        "target": [
+            "fixture/gen/**/*.tsx"
+        ],
+        "genExtend": [
+            {
+                "target": [
+                    "fixture/gen/**/*.tsx"
+                ],
+                "outputPath": "fixture/test-gen-result.json",
+                "packageName": "@test"
+            }
+        ]
+    }
+}
