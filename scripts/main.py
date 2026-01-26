@@ -65,6 +65,15 @@ if __name__ == "__main__":
     )
     full_components.extend(components)
 
+    dependency_injections = {
+        "Radio": ["RadioIndicator", "RadioCard"],
+        "Checkbox": ["CheckboxIndicator", "CheckboxCard"],
+    }
+
+    for comp in full_components:
+        if comp["name"] in dependency_injections:
+            comp["dependency"].extend(dependency_injections[comp["name"]])
+
     non_core = set(comp["name"] for comp in components)
 
     # Mantine Ext Dates
