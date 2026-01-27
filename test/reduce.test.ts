@@ -23,15 +23,20 @@ describe("generate", () => {
       '@import "@mantine/core/styles/Divider.css";',
       '@import "@mantine/core/styles/Flex.css";',
       '@import "@mantine/core/styles/Group.css";',
+      '@import "@mantine/core/styles/InlineInput.css";',
       '@import "@mantine/core/styles/Loader.css";',
+      '@import "@mantine/core/styles/Overlay.css";',
+      '@import "@mantine/core/styles/RadioCard.css";',
+      '@import "@mantine/core/styles/RadioIndicator.css";',
       '@import "@mantine/core/styles/Stack.css";',
       '@import "@mantine/core/styles/UnstyledButton.css";',
-      '@import "@mantine/core/styles/InlineInput.css";',
       '@import "@mantine/core/styles/Button.css";',
+      '@import "@mantine/core/styles/CloseButton.css";',
       '@import "@mantine/dates/styles.css";',
       '@import "@mantine/core/styles/Input.css";',
-      '@import "@mantine/core/styles/Popover.css";',
       '@import "@mantine/core/styles/Radio.css";',
+      '@import "@mantine/core/styles/VisuallyHidden.css";',
+      '@import "@mantine/core/styles/Popover.css";',
     ].join("\n");
     expect(generatedCss.trim()).toBe(expectedContent.trim());
   });
@@ -58,17 +63,43 @@ describe("generate", () => {
       '@import "@mantine/core/styles/Fieldset.css";',
       '@import "@mantine/core/styles/Flex.css";',
       '@import "@mantine/core/styles/Group.css";',
+      '@import "@mantine/core/styles/InlineInput.css";',
       '@import "@mantine/core/styles/Loader.css";',
       '@import "@mantine/core/styles/Paper.css";',
+      '@import "@mantine/core/styles/RadioCard.css";',
+      '@import "@mantine/core/styles/RadioIndicator.css";',
       '@import "@mantine/core/styles/Stack.css";',
       '@import "@mantine/core/styles/Text.css";',
       '@import "@mantine/core/styles/Title.css";',
       '@import "@mantine/core/styles/UnstyledButton.css";',
-      '@import "@mantine/core/styles/InlineInput.css";',
-      '@import "@mantine/core/styles/Button.css";',
       '@import "@mantine/core/styles/ActionIcon.css";',
+      '@import "@mantine/core/styles/Button.css";',
+      '@import "@mantine/core/styles/CloseButton.css";',
       '@import "@mantine/core/styles/Input.css";',
       '@import "@mantine/core/styles/Radio.css";',
+    ].join("\n");
+    expect(generatedCss.trim()).toBe(expectedContent.trim());
+  });
+
+  it("should handle extension case", async () => {
+    const configPath = path.resolve(__dirname, "test-reduce-extension.json");
+    const fileContents = fs.readFileSync(configPath, "utf8");
+    const configData = JSON.parse(fileContents);
+    const config = parseConfig({ configPath, configData });
+    await GenerateCmd({ packageJsonPath: configPath, config });
+
+    const outputPath = path.resolve(
+      path.dirname(configPath),
+      config.outputPath!,
+    );
+    const generatedCss = fs.readFileSync(outputPath, "utf-8");
+
+    const expectedContent = [
+      '@import "@mantine/core/styles/ScrollArea.css";',
+      '@import "@mantine/core/styles/UnstyledButton.css";',
+      '@import "@mantine/code-highlight/styles.css";',
+      '@import "@mantine/core/styles/Notification.css";',
+      '@import "@mantine/notifications/styles.css";',
     ].join("\n");
     expect(generatedCss.trim()).toBe(expectedContent.trim());
   });

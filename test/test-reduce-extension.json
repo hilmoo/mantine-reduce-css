@@ -1,0 +1,19 @@
+{
+	"mantineReduceCss": {
+		"target": [
+			"fixture/reduce-extension/**"
+		],
+		"globalCss": false,
+		"extensions": {
+			"CodeHighlight": true,
+			"NotificationsSystem": true,
+			"Spotlight": false,
+			"Carousel": false,
+			"Dropzone": false,
+			"NavigationProgress": false,
+			"ModalsManager": false,
+			"RichTextEditor": false
+		},
+		"outputPath": "fixture/reduce-extension.css"
+	}
+}

@@ -1,7 +1,7 @@
 {
 	"name": "mantine-reduce-css",
 	"type": "module",
-	"version": "2.3.5",
+	"version": "2.3.6",
 	"description": "cli tool for reducing global css for mantine",
 	"main": "dist/index.js",
 	"bin": {
