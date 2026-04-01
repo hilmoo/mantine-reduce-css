@@ -138,6 +138,10 @@ function getAllDependencyComponents({
     const pkg = "@mantine/tiptap";
     components.add({ name: pkg, module: pkg });
   }
+  if (config.extensions.Schedule) {
+    const pkg = "@mantine/schedule";
+    components.add({ name: pkg, module: pkg });
+  }
 
   return getDependencyComponents(components, componentMap);
 }

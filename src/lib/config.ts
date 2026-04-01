@@ -10,6 +10,7 @@ interface ExtensionsConfig {
   NavigationProgress: boolean;
   ModalsManager: boolean;
   RichTextEditor: boolean;
+  Schedule: boolean;
 }
 
 export interface ExtendConfig {
@@ -50,6 +51,7 @@ const defaultExtensions: ExtensionsConfig = {
   NavigationProgress: false,
   ModalsManager: false,
   RichTextEditor: false,
+  Schedule: false,
 };
 
 interface parseConfigProps {

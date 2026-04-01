@@ -48,7 +48,8 @@ Add a mantineReduceCss section to your `package.json` or create a standalone JSO
       "Dropzone": false,
       "NavigationProgress": false,
       "ModalsManager": false,
-      "RichTextEditor": false
+      "RichTextEditor": false,
+      "Schedule": false
     },
     "extend": []
   }
