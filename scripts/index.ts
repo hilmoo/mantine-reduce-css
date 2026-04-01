@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 async function main() {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
-  const parentDir = path.dirname(path.dirname(__dirname));
+  const parentDir = path.dirname(__dirname);
   const srcDir = path.join(parentDir, "src");
   const mantineRoot = path.join(parentDir, "mantine", "packages", "@mantine");
 
@@ -145,6 +145,16 @@ async function main() {
       path.join(mantineRoot, "tiptap", "src"),
       "@mantine/tiptap",
       "@mantine/tiptap/styles.css",
+      nonCore,
+    ),
+  );
+
+  // Schedule
+  addExtensions(
+    tree(
+      path.join(mantineRoot, "schedule", "src", "components"),
+      "@mantine/schedule",
+      "@mantine/schedule/styles.css",
       nonCore,
     ),
   );

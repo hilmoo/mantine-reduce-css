@@ -10,6 +10,7 @@ Since version 2, this package aligns with Mantine's minor versioning to ensure c
 | :----------------- | :------------ |
 | `2.3.x`            | `8.3.x`       |
 | `2.4.x`            | `8.4.x`       |
+| `3.0.x`            | `9.0.x`       |
 
 ## Installation
 

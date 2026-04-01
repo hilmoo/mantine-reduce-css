@@ -43,7 +43,8 @@ export function listMantineComponent(
   const allJsonPath = path.join(parentDir, "scripts", "all.json");
   if (fs.existsSync(allJsonPath)) {
     const data = JSON.parse(fs.readFileSync(allJsonPath, "utf-8"));
-    data.forEach((item: string) => cssFile.add(item));
+    const componentNames = Object.keys(data);
+    componentNames.forEach((name: string) => cssFile.add(name));
   }
 
   const sortedSearchPaths = [...searchPaths].sort();
